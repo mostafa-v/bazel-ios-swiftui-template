@@ -13,6 +13,9 @@ apple_bundle_version(
 
 # Code
 
+# Ignore the source directory as this build file has a custom swift_library.
+# gazelle:exclude source
+
 swift_library(
     name = "app.library",
     srcs = glob(["source/**/*.swift"]),

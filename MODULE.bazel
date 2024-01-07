@@ -15,6 +15,12 @@ bazel_dep(
     version = "3.1.1",
     repo_name = "build_bazel_rules_apple",
 )
+bazel_dep(name = "rules_swift_package_manager", version = "0.25.0")
+bazel_dep(
+    name = "gazelle",
+    version = "0.35.0",
+    repo_name = "bazel_gazelle",
+)
 
 bazel_dep(
     name = "buildifier_prebuilt",
@@ -24,3 +30,17 @@ bazel_dep(
 
 non_module_dependencies = use_extension("//tools:extensions.bzl", "non_module_dependencies")
 use_repo(non_module_dependencies, "SwiftLint")
+# swift_deps START
+swift_deps = use_extension(
+    "@rules_swift_package_manager//:extensions.bzl",
+    "swift_deps",
+)
+swift_deps.from_file(
+    deps_index = "//:swift_deps_index.json",
+)
+use_repo(
+    swift_deps,
+    "swiftpkg_firebase_ios_sdk",
+    "swiftpkg_swift_package_manager_google_mobile_ads",
+)
+# swift_deps END
