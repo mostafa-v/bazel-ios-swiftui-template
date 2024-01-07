@@ -20,6 +20,7 @@ swift_library(
     module_name = "app",
     deps = [
         "//modules/API:APILib",
+        "@swiftpkg_firebase_ios_sdk//:SwiftPM-PlatformExclude_FirebaseAnalyticsWrap_FirebaseAnalyticsTarget",
     ],
 )
 

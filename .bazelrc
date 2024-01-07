@@ -68,3 +68,10 @@ build:ci --remote_upload_local_results
 
 # Load a user.bazelrc
 try-import %workspace%/user.bazelrc
+
+# Required by firebase-ios-sdk, googleappmeasurement, googledatatransport, googleutilities
+build --copt='-std=c99'
+# Required by firebase-ios-sdk, googleappmeasurement, googledatatransport, googleutilities, leveldb
+build --cxxopt='-std=gnu++14'
+build --linkopt=-ObjC
+
