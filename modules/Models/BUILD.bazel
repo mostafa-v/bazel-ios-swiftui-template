@@ -13,6 +13,7 @@ swift_library(
         "Models/Models.swift",
     ],
     module_name = "Models",
+    tags = ["manual"],
     visibility = ["//modules:default_library_visibility"],
 )
 
@@ -25,6 +26,7 @@ swift_library(
         "Tests/ModelsTests.swift",
     ],
     module_name = "ModelsTests",
+    tags = ["manual"],
     deps = [
         ":ModelsLib",
     ],

@@ -13,6 +13,7 @@ swift_library(
         "API/API.swift",
     ],
     module_name = "API",
+    tags = ["manual"],
     visibility = ["//modules:default_library_visibility"],
     deps = [
         "//modules/Models:ModelsLib",
@@ -28,6 +29,7 @@ swift_library(
         "Tests/APITests.swift",
     ],
     module_name = "APITests",
+    tags = ["manual"],
     deps = [
         ":APILib",
     ],
