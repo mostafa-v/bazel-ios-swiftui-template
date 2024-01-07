@@ -4,6 +4,9 @@ load("//tools:shared.bzl", "versions")
 
 # Code
 
+# gazelle:exclude Models
+# gazelle:exclude Tests
+
 swift_library(
     name = "ModelsLib",
     srcs = [
